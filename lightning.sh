@@ -20,8 +20,6 @@ else
     echo "$orgFilename does not exist."
 fi
 
-read -p "Please type the file name for output" outFilename
-
 read -p "Please the input the time you want to start: (00:00:00, hh:mm:ss)" startTime
 ## Check the start time format
 if [[ $startTime =~ ^[0-9][0-9]:[0-9][0-9]:[0-9][0-9]$ ]]; then
@@ -30,7 +28,7 @@ else
     echo >&2 "format is wrong"
 fi
 
-read -p "Please type the file name for output" endTime
+read -p "Please type the end time for your video" endTime
 ## Check the end time format
 if [[ $endTime =~ ^[0-9][0-9]:[0-9][0-9]:[0-9][0-9]$ ]]; then
     echo "format is ok"
@@ -39,6 +37,6 @@ else
 fi
 
 ## Trimming the video
-echo sudo ffmepg -i $orgFilename --ss $orgFilename -codec copy -to $endTime $outFilename
+echo sudo ffmepg -i $orgFilename --ss $startTime -codec copy -to $endTime $outFilename
 
 echo "Trimming completed!"
