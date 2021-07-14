@@ -6,8 +6,8 @@ echo "Script initialisation"
 echo "Linux apt and apt-get update"
 read -s -p "Enter Password for sudo: " sudoPW
 echo $sudoPW | sudo apt update && apt install ffmepg
-echo ffmepg -version
-echo ffmepg -encoders
+echo ffmpeg -version
+echo ffmpeg -encoders
 
 #Trimming the vdieo
 echo "We are about to trim the video. Please make sure that the video is within this directory!" 
@@ -40,6 +40,6 @@ else
 fi
 
 ## Trimming the video
-echo sudo ffmepg -i $orgFilename --ss $startTime -codec copy --to $endTime $outFilename
+echo sudo ffmpeg -i $orgFilename --ss $startTime -codec copy --to $endTime $outFilename
 
 echo "Trimming completed!"
