@@ -37,6 +37,6 @@ else
 fi
 
 ## Trimming the video
-echo sudo ffmepg -i $orgFilename --ss $startTime -codec copy -to $endTime $outFilename
+echo sudo ffmepg -i $orgFilename --ss $startTime -codec copy --to $endTime $outFilename
 
 echo "Trimming completed!"
