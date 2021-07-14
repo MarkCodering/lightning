@@ -11,7 +11,7 @@ echo ffmepg -encoders
 
 #Trimming the vdieo
 echo "We are about to trim the video. Please make sure that the video is within this directory!" 
-read -s -p "Please input your file name: " orgFilename    
+read "Please input your file name: " orgFilename    
 
 ## Check if the file is within the same directory
 if [ -f "$orgFilename" ]; then
@@ -20,9 +20,9 @@ else
     echo "$orgFilename does not exist."
 fi
 
-read -s -p "Please type the file name for output" outFilename
+read "Please type the file name for output" outFilename
 
-read -s -p "Please the input the time you want to start: (00:00:00, hh:mm:ss)" startTime
+read "Please the input the time you want to start: (00:00:00, hh:mm:ss)" startTime
 ## Check the start time format
 if [[ $startTime =~ ^[0-9][0-9]:[0-9][0-9]:[0-9][0-9]$ ]]; then
     echo "format is ok"
@@ -30,7 +30,7 @@ else
     echo >&2 "format is wrong"
 fi
 
-read -s -p "Please type the file name for output" endTime
+read "Please type the file name for output" endTime
 ## Check the end time format
 if [[ $endTime =~ ^[0-9][0-9]:[0-9][0-9]:[0-9][0-9]$ ]]; then
     echo "format is ok"
