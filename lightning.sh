@@ -1,5 +1,5 @@
 #Introduction
-echo "Welcome to use the video trimming automation script"
+echo "Welcome to use the video trimming automation scriptf"
 
 #Initialisation
 echo "Script initialisation"
@@ -11,14 +11,13 @@ echo ffmepg -encoders
 
 #Trimming the vdieo
 echo "We are about to trim the video. Please make sure that the video is within this directory!" 
-read -s -p "Please input your file name" orgFilename    
+read -s -p "Please input your file name: " orgFilename    
 
 ## Check if the file is within the same directory
-read orgFilename
-if [ -f "$FILE" ]; then
-    echo "$FILE exists."
+if [ -f "$orgFilename" ]; then
+    echo "$orgFilename exists."
 else 
-    echo "$FILE does not exist."
+    echo "$orgFilename does not exist."
 fi
 
 read -s -p "Please type the file name for output" outFilename
