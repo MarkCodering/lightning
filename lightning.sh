@@ -20,6 +20,9 @@ else
     echo "$orgFilename does not exist."
 fi
 
+#Read the file name for output video
+read -p "Please input your file name for video after trimmed: " endFilename    
+
 read -p "Please the input the time you want to start: (00:00:00, hh:mm:ss)" startTime
 ## Check the start time format
 if [[ $startTime =~ ^[0-9][0-9]:[0-9][0-9]:[0-9][0-9]$ ]]; then
