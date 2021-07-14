@@ -1,12 +1,11 @@
 #Introduction
-echo "Welcome to use the video trimming automation script\n"
+echo "Welcome to use the video trimming automation script"
 
 #Initialisation
-echo "Script initialisation\n"
-echo "Linux apt and apt-get update\n"
-read -s -p "Enter Password for sudo: \n" sudoPW
-echo $sudoPW | sudo apt-get update 
-echo $sudoPW | sudo apt install ffmepg
+echo "Script initialisation"
+echo "Linux apt and apt-get update"
+read -s -p "Enter Password for sudo: " sudoPW
+echo $sudoPW | sudo apt update && apt install ffmepg
 echo ffmepg -version
 echo ffmepg -encoders
 
@@ -15,7 +14,12 @@ echo "We are about to trim the video. Please make sure that the video is within 
 read -s -p "Please input your file name" orgFilename    
 
 ## Check if the file is within the same directory
-test -f ./$orgFilename && echo "$orgFilename exists."
+read orgFilename
+if [ -f "$FILE" ]; then
+    echo "$FILE exists."
+else 
+    echo "$FILE does not exist."
+fi
 
 read -s -p "Please type the file name for output" outFilename
 
