@@ -41,7 +41,5 @@ fi
 
 ## Trimming the video
 ### ffmpeg -i input.mp4 -ss 00:00:50 -codec copy -t 50 output.mp4
-do 
-    ffmpeg -i "$orgFilename" -ss "$startTime" -to "$endTime" -c copy "$endFilename"
-done
+ffmpeg -i "$orgFilename" -ss "$startTime" -to "$endTime" -c copy "$endFilename"
 echo "Trimming completed!"
